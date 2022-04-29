@@ -20,7 +20,7 @@ namespace devideal_intern
         {
             TimeSpan differenceTime = this.DateOfReturn - this.DateOfBorrow;
             int differenceDay = differenceTime.Days;
-            int calcFee = (differenceDay - DaysForReturn) * fee;
+            int calcFee = (differenceDay - this.DaysForReturn) * fee;
             return calcFee;
         }
     }

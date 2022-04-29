@@ -11,12 +11,12 @@ namespace devideal_intern
             List<Book> list = new List<Book>();
             string command;
             string typeOfBook;
-            string borrowDay;
-            string borrowYear;
-            string borrowMonth;
-            string returnDay;
-            string returnYear;
-            string returnMonth;
+            string dayOfBorrow;
+            string yearOfBorrow;
+            string monthOfBorrow;
+            string dayOfReturn;
+            string yearOfReturn;
+            string monthOfReturn;
             Book book;
             int fee;
 
@@ -30,41 +30,41 @@ namespace devideal_intern
                         " [3] classic, [4] law, [5] philosophy, [6] medical");
                     typeOfBook = Console.ReadLine();
                     Console.WriteLine("Please, write the day of the borrow");
-                    borrowDay = Console.ReadLine();
+                    dayOfBorrow = Console.ReadLine();
                     Console.WriteLine("Please, write the month of the borrow");
-                    borrowMonth = Console.ReadLine();
+                    monthOfBorrow = Console.ReadLine();
                     Console.WriteLine("Please, write the year of the borrow");
-                    borrowYear = Console.ReadLine();
+                    yearOfBorrow = Console.ReadLine();
 
                     Console.WriteLine("Please, write the day of the return");
-                    returnDay = Console.ReadLine();
+                    dayOfReturn = Console.ReadLine();
                     Console.WriteLine("Please, write the month of the return");
-                    returnMonth = Console.ReadLine();
+                    monthOfReturn = Console.ReadLine();
                     Console.WriteLine("Please, write the year of the return");
-                    returnYear = Console.ReadLine();
+                    yearOfReturn = Console.ReadLine();
 
                     switch (int.Parse(typeOfBook))
                     {
                         case 1:
-                            book = new ItBook(int.Parse(borrowYear), int.Parse(borrowMonth), 
-                                int.Parse(borrowDay),int.Parse(returnYear), int.Parse(returnMonth),
-                                int.Parse(returnDay));
+                            book = new ItBook(int.Parse(yearOfBorrow), int.Parse(monthOfBorrow), 
+                                int.Parse(dayOfBorrow),int.Parse(yearOfReturn), int.Parse(monthOfReturn),
+                                int.Parse(dayOfReturn));
                             list.Add(book);
                             fee = book.CalcFee();
                             PrintInfo(fee);
                             break;
                         case 2:
-                            book = new HistoryBook(int.Parse(borrowYear), int.Parse(borrowMonth),
-                                    int.Parse(borrowDay), int.Parse(returnYear), int.Parse(returnMonth),
-                                    int.Parse(returnDay));
+                            book = new HistoryBook(int.Parse(yearOfBorrow), int.Parse(monthOfBorrow),
+                                int.Parse(dayOfBorrow), int.Parse(yearOfReturn), int.Parse(monthOfReturn),
+                                int.Parse(dayOfReturn));
                             list.Add(book);
                             fee = book.CalcFee();
                             PrintInfo(fee);
                             break;
                         default:
-                            book = new OtherBook(int.Parse(borrowYear), int.Parse(borrowMonth),
-                                int.Parse(borrowDay), int.Parse(returnYear), int.Parse(returnMonth),
-                                int.Parse(returnDay));
+                            book = new OtherBook(int.Parse(yearOfBorrow), int.Parse(monthOfBorrow),
+                                int.Parse(dayOfBorrow), int.Parse(yearOfReturn), int.Parse(monthOfReturn),
+                                int.Parse(dayOfReturn));
                             list.Add(book);
                             fee = book.CalcFee();
                             PrintInfo(fee);
