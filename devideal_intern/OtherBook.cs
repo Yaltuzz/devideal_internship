@@ -11,10 +11,10 @@ namespace devideal_intern
         private const int fee = 2;
 
         public OtherBook(int yearOfBorrow, int monthOfBorrow, int dayOfBorrow,
-            int yearOfReturn, int monthOfReturn, int dayOfReturn):base()
+            int yearOfReturn, int monthOfReturn, int dayOfReturn):base(yearOfBorrow, monthOfBorrow, dayOfBorrow, yearOfReturn,
+                monthOfReturn, dayOfReturn)
         {
-            this.DateOfBorrow = new DateTime(yearOfBorrow, monthOfBorrow, dayOfBorrow);
-            this.DateOfReturn = new DateTime(yearOfReturn, monthOfReturn, dayOfReturn);
+
         }
         public override int CalcFee()
         {

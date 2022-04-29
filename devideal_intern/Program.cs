@@ -26,7 +26,7 @@ namespace devideal_intern
                 command=Console.ReadLine();
                 if (command.Equals("1"))
                 {
-                    Console.WriteLine("Please pick a book category [1] it, [2] history," +
+                    Console.WriteLine("Please pick a book category [1] IT, [2] history," +
                         " [3] classic, [4] law, [5] philosophy, [6] medical");
                     typeOfBook = Console.ReadLine();
                     Console.WriteLine("Please, write the day of the borrow");
